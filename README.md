@@ -8,14 +8,14 @@ You need to apply an account for the model support.
 Specific manual,please visit the web.
 
 ## Configuration
-APPId = "54539efd"
+APPId = "*************yours*********"
 
-APISecret = "N2EyZmEwNDU1NTZjYTEzZDhhN2EzZWQw"
+APISecret = "*************yours*********"
 
-APIKey = "d54a916705be6dba453ed732f4621b3a"
+APIKey = "*************yours*********"
 
 <!-- RES_ID is only tag，please use the correct value defined by Application Controller -->
-RES_ID = "its_en_cn_word"
+RES_ID = "*************yours*********"
 
 All of above can get from iflytek's controller.
 

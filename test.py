@@ -6,7 +6,8 @@ import workThread
 import queue
 import xml.etree.ElementTree as ET
 
-from XmlLanguagePraser.threadPool import threadPool
+import threadPool
+from threadPool import threadPool as threadPool
 
 # now is test, when completed, is main
 # work thread is ok

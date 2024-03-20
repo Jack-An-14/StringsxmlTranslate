@@ -1,5 +1,5 @@
 import threading
-from XmlLanguagePraser import machine_translation_python_demo as translation
+import machine_translation_python_demo as translation
 
 
 # work Thread
