@@ -14,11 +14,11 @@ import requests
  3.翻译文本不能超过5000个字符，即汉语不超过15000个字节，英文不超过5000个字节。
  4.此接口调用返回时长上有优化、通过个性化术语资源使用可以做到词语个性化翻译、后面会支持更多的翻译语种。
 '''
-APPId = "54539efd"
-APISecret = "N2EyZmEwNDU1NTZjYTEzZDhhN2EzZWQw"
-APIKey = "d54a916705be6dba453ed732f4621b3a"
+APPId = "******yours**********"
+APISecret = "******yours**********"
+APIKey = "******yours**********"
 # 术语资源唯一标识，请根据控制台定义的RES_ID替换具体值，如不需术语可以不用传递此参数
-RES_ID = "its_en_cn_word"
+RES_ID = "******yours**********"
 # 翻译原文本内容
 TEXT = "妈妈"
 
