@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding=UTF-8
 import threading
 import machine_translation_python_demo as translation
 

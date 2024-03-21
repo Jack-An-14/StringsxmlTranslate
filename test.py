@@ -1,4 +1,6 @@
-#!/usr/bin
+#!/usr/bin/python3
+# coding=UTF-8
+import getopt
 import threading
 import time
 
@@ -8,19 +10,40 @@ import xml.etree.ElementTree as ET
 
 import threadPool
 from threadPool import threadPool as threadPool
+import sys
 
 # now is test, when completed, is main
 # work thread is ok
-# thread = workThread.workThread(1, "你好", "cn", "en")
 
 
 
 if __name__=='__main__':
     # work queue
-    tree = ET.parse('strings.xml')
+    fromL = None
+    toL = None
+    file = ""
+
+    try:
+        opts, args = getopt.getopt(sys.argv[1:], "f:t:r:", ["fromL=", "toL="])
+    except getopt.GetoptError:
+        print('test.py error args, please check')
+        sys.exit(1)
+    for opt, arg in opts:
+        if opt == '-f':
+            fromL = arg
+        elif opt == '-t':
+            toL = arg
+        elif opt == '-r':
+            file = arg
+# debug
+    print(fromL, toL, file)
+    try:
+        tree = ET.parse(file)
+    except ET.ParseError:
+        print("file path error, please check")
+        sys.exit(1)
+
     root = tree.getroot()
-    fromlang = input("文本语言")
-    tolang = input("翻译语言")
 
     pool = threadPool(3, 1000, 20)
     lock = threading.Lock()
@@ -29,10 +52,10 @@ if __name__=='__main__':
         if child.tag == "string" and child.text is not None:
             lock.acquire()
             try:
-                var = workThread.workThread(i, child.text, fromlang, tolang, child)
+                var = workThread.workThread(i, child.text, fromL, toL, child)
                 pool.submit(var)
                 i += 1
             finally:
                 lock.release()
-    # 线程池任务join等待
-    tree.write('strings.xml', encoding='utf-8')
+    # thread pool task join() wait
+    tree.write(file, encoding='utf-8')

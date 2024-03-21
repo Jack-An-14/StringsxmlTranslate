@@ -1,3 +1,5 @@
+#!/usr/bin/python3
+# coding=UTF-8
 from datetime import datetime
 from wsgiref.handlers import format_date_time
 from time import mktime

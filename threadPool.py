@@ -1,5 +1,5 @@
-import queue
-import string
+#!/usr/bin/python3
+# coding=UTF-8
 import threading
 import worker
 
