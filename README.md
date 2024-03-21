@@ -6,7 +6,8 @@ The model is iflytek's machine translation model.
 You need to apply an account for the model support.
 [Model link](https://www.xfyun.cn/services/xftrans)
 Specific manual,please visit the web.
-
+## How to use
+python3 test.py -f ${fromLanguage} -t ${toLanguage} -r ${filePath}
 ## Configuration
 APPId = "*************yours*********"
 
